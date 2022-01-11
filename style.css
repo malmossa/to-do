@@ -1,0 +1,19 @@
+body {
+  background: #2d004d;
+  color: white;
+}
+
+.container {
+  max-width: 500px;
+}
+
+.form-control {
+  background: #1e0033;
+  border: 2px solid #2d004d;
+}
+.form-control:focus {
+  background: #1e0033;
+  color: white;
+  outline: none;
+  box-shadow: none;
+}
