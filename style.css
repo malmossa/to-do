@@ -36,3 +36,8 @@ input[type="text"]:focus {
 .check:hover {
   opacity: 0.7;
 }
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
