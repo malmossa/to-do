@@ -23,3 +23,16 @@ input[type="text"]:focus {
 .delete {
   cursor: pointer;
 }
+
+.delete:hover {
+  opacity: 0.7;
+}
+
+.check {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.check:hover {
+  opacity: 0.7;
+}
