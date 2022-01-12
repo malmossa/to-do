@@ -19,11 +19,15 @@ addTodo.addEventListener("submit", (e) => {
   addTodo.reset();
 });
 
-// Delete to do item with event delegation
+// Delete to do item and mark as completed with event delegation
 list.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     if (confirm("Are you sure!")) {
       e.target.parentElement.parentElement.remove();
     }
+  }
+
+  if (e.target.classList.contains("check")) {
+    e.target.parentElement.previousElementSibling.classList.toggle("completed");
   }
 });
