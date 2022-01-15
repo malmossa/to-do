@@ -29,14 +29,17 @@ list.addEventListener("click", (e) => {
 });
 
 // Filter the to do list by key word
-search.addEventListener("keyup", () => {
-  const inputText = search.value.trim();
+search.addEventListener("keyup", (e) => {
+  const text = e.target.value.toLowerCase();
+  const todoItems = document.querySelectorAll(".list-group-item");
 
-  Array.from(list.children)
-    .filter((todo) => !todo.textContent.includes(inputText))
-    .forEach((todo) => todo.classList.add("filtered"));
+  todoItems.forEach((todo) => {
+    const item = todo.firstChild.nextSibling.textContent;
 
-  Array.from(list.children)
-    .filter((todo) => todo.textContent.includes(inputText))
-    .forEach((todo) => todo.classList.remove("filtered"));
+    if (item.toLowerCase().indexOf(text) != -1) {
+      todo.style.display = "block";
+    } else {
+      todo.style.display = "none";
+    }
+  });
 });
