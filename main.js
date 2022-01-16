@@ -1,6 +1,6 @@
 const list = document.querySelector("ul");
 const addTodo = document.querySelector(".add");
-const search = document.querySelector(".search");
+const searchInput = document.querySelector(".search");
 
 // Adding new to do item
 addTodo.addEventListener("submit", (e) => {
@@ -29,17 +29,12 @@ list.addEventListener("click", (e) => {
 });
 
 // Filter the to do list by key word
-search.addEventListener("keyup", (e) => {
-  const text = e.target.value.toLowerCase();
-  const todoItems = document.querySelectorAll(".list-group-item");
+searchInput.addEventListener("keyup", () => {
+  const text = searchInput.search.value.toLowerCase();
 
-  todoItems.forEach((todo) => {
-    const item = todo.firstChild.nextSibling.textContent;
+  document.querySelectorAll(".list-group-item").forEach((todo) => {
+    const todoItem = todo.textContent.trim();
 
-    if (item.toLowerCase().indexOf(text) != -1) {
-      todo.style.display = "block";
-    } else {
-      todo.style.display = "none";
-    }
+    console.log(todoItem);
   });
 });
