@@ -31,10 +31,15 @@ list.addEventListener("click", (e) => {
 // Filter the to do list by key word
 searchInput.addEventListener("keyup", () => {
   const text = searchInput.search.value.toLowerCase();
+  const listItem = document.querySelectorAll(".list-group-item");
 
-  document.querySelectorAll(".list-group-item").forEach((todo) => {
+  listItem.forEach((todo) => {
     const todoItem = todo.textContent.trim();
 
-    console.log(todoItem);
+    if (todoItem.includes(text)) {
+      todo.classList.remove("filtered");
+    } else {
+      todo.classList.add("filtered");
+    }
   });
 });
