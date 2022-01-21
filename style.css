@@ -7,6 +7,10 @@ body {
   max-width: 500px;
 }
 
+.empty {
+  opacity: 0.08;
+}
+
 input[type="text"],
 input[type="text"]:focus {
   color: #fff;

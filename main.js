@@ -1,3 +1,4 @@
+const emptList = document.querySelector(".empty");
 const list = document.querySelector("ul");
 const addTodo = document.querySelector(".add");
 const searchInput = document.querySelector(".search");
@@ -6,10 +7,11 @@ const searchInput = document.querySelector(".search");
 addTodo.addEventListener("submit", (e) => {
   e.preventDefault();
   if (addTodo.add.value) {
+    emptList.style.display = "none";
     list.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>${addTodo.add.value}</span>
-                        <i class="far fa-trash-alt delete"></i>
-                      </li>`;
+    <span>${addTodo.add.value}</span>
+    <i class="far fa-trash-alt delete"></i>
+    </li>`;
   } else {
     alert("Please add to do item first");
   }
@@ -26,6 +28,10 @@ list.addEventListener("click", (e) => {
   }
 
   e.target.classList.toggle("completed");
+
+  if (list.innerHTML === "") {
+    emptList.style.display = "block";
+  }
 });
 
 // Filter the to do list by key word
